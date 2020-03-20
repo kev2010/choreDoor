@@ -42,6 +42,7 @@ body {
 
 .door-row {
     text-align: center;
+    margin: 30px;
 }
 
 .start-row {
@@ -61,4 +62,30 @@ body {
 .door-frame {
     cursor: pointer;
     padding: 10px;
+}
+
+.score-row {
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+}
+
+.streak-text {
+    font-family: 'Work Sans';
+    font-size: 14px;
+    padding: 10px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 900;
+}
+
+.streak-box {
+    background-color: #0ff;
+    font-family: 'Work Sans';
+    font-size: 45px;
+    font-weight: 900;
+    width: 60px;
+    margin: 18px;
+    padding: 8px;
+    display: inline-block;
 }

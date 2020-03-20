@@ -6,11 +6,15 @@ const doorImage1 = document.getElementById('door1');
 const doorImage2 = document.getElementById('door2');
 const doorImage3 = document.getElementById('door3');
 const startButton = document.getElementById('start');
+const currentStreakButton = document.getElementById('current-streak');
+const bestStreakButton = document.getElementById('best-streak');
 let openDoor1;
 let openDoor2;
 let openDoor3;
 let numClosedDoors = 3;
 let currentlyPlaying = true;
+let bestStreak = 0;
+let currentStreak = 0;
 
 const randomChoreDoorGenerator = () => {
     const choreDoor = Math.floor(Math.random() * numClosedDoors);
@@ -89,10 +93,17 @@ const startRound = () => {
 
 const gameOver = (status) => {
     if (status === 'win') {
+        currentStreak++;
         startButton.innerHTML = 'You win! Play again?';
+        if (currentStreak > bestStreak) {
+            bestStreak = currentStreak;
+            bestStreakButton.innerHTML = `${bestStreak}`; 
+        }
     } else {
+        currentStreak = 0;
         startButton.innerHTML = 'Game over! Play again?';
     }
+    currentStreakButton.innerHTML = `${currentStreak}`;
     currentlyPlaying = false;
 }
 
